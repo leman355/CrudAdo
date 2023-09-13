@@ -1,0 +1,8 @@
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.AssemblyInfo.cs
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.RazorAssemblyInfo.cache
+C:\Users\user\source\repos\CarWeb\CarWeb\obj\Debug\net7.0\CarWeb.RazorAssemblyInfo.cs
