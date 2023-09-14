@@ -1,4 +1,4 @@
-﻿using CarWeb.Data;
+using CarWeb.Data;
 using CarWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +18,7 @@ namespace CarWeb.Controllers
         {
             _context = context;
             _configuration = configuration;
+
         }
         public async Task<IActionResult> Index()
         {
@@ -40,7 +41,7 @@ namespace CarWeb.Controllers
 
                 using var command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO public.Car(Model, Year, Price, IsDeleted) VALUES(@Model, @Year, @Price, @IsDeleted) RETURNING id";
+                command.CommandText = "INSERT INTO public.\"Cars\"(\"Model\", \"Year\", \"Price\", \"IsDeleted\") VALUES(@Model, @Year, @Price, @IsDeleted) RETURNING \"Id\"";
                 command.Parameters.AddWithValue("@Model", car.Model);
                 command.Parameters.AddWithValue("@Year", car.Year);
                 command.Parameters.AddWithValue("@Price", car.Price);
@@ -54,7 +55,6 @@ namespace CarWeb.Controllers
                 {
                     return NotFound();
                 }
-
             }
             catch (Exception)
             {
@@ -79,7 +79,7 @@ namespace CarWeb.Controllers
 
                 using var command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "UPDATE public.Car SET Model = @Model, Year = @Year, Price = @Price, IsDeleted = @IsDeleted WHERE Id = @Id";
+                command.CommandText = "UPDATE public.\"Cars\" SET \"Model\" = @Model, \"Year\" = @Year, \"Price\" = @Price, \"IsDeleted\" = @IsDeleted WHERE \"Id\" = @Id";
                 command.Parameters.AddWithValue("@Id", car.Id);
                 command.Parameters.AddWithValue("@Model", car.Model);
                 command.Parameters.AddWithValue("@Year", car.Year);
@@ -99,7 +99,7 @@ namespace CarWeb.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var delete = await _context.Cars.SingleOrDefaultAsync(x => x.Id == id);
-            return View(delete);
+            return View(delete);    
         }
         [HttpPost]
         public async Task<IActionResult> Delete(Car car)
